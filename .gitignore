@@ -1,0 +1,17 @@
+# Ignorar arquivos temporários do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignorar banco de dados local (para não subir seus testes)
+*.json
+!package.json
+
+# Ignorar arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar pastas de ambiente virtual (se tiver criado)
+env/
+venv/
+.venv/

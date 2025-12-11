@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Distribuído</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <header>
+            <div id="header-title">Catálogo de Produtos</div>
+            <div class="header-icons">
+                <i class="ph ph-house" onclick="showScreen('catalogo')"></i>
+                <i class="ph ph-bag" onclick="showScreen('meus-pedidos')"></i>
+                <i class="ph ph-shopping-cart" onclick="showScreen('carrinho')"></i>
+            </div>
+        </header>
+
+        <section id="screen-catalogo" class="screen active">
+            <div class="banner">
+                <h3>Pizzas Populares</h3>
+            </div>
+            <div id="products-grid" class="products-grid">
+                </div>
+        </section>
+
+        <section id="screen-carrinho" class="screen hidden">
+            <h2>Carrinho</h2>
+            <div id="cart-items-list">
+                </div>
+            <div class="cart-footer">
+                <div class="total-row">
+                    <span>Total:</span>
+                    <span id="cart-total-price">R$ 0,00</span>
+                </div>
+                <button class="btn-primary" onclick="checkout()">Pagamento</button>
+            </div>
+        </section>
+
+        <section id="screen-meus-pedidos" class="screen hidden">
+            <h2>Meus Pedidos</h2>
+            <div id="orders-list">
+                <p style="text-align:center; opacity: 0.6;">Carregando pedidos...</p>
+            </div>
+        </section>
+
+        <section id="screen-pagamento" class="screen hidden">
+            <h2>Pagamento</h2>
+            <p>Use o código PIX abaixo para pagar seu pedido!</p>
+            
+            <div class="pix-box">
+                <p class="pix-code">00020126580014BR.GOV.BCB.PIX0136123e4567-e89b-12d3-a456-426614174000520400005303986540410.005802BR5913DeliveryApp6008Recife62070503***6304E1F2</p>
+            </div>
+
+            <p class="instruction">Confirme o pagamento no seu banco.</p>
+
+            <button class="btn-primary" onclick="copyPix()">Copiar Código</button>
+            
+            <button class="btn-secondary" style="margin-top: 10px;" onclick="finishOrderSimulation()">Simular "Pago"</button>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

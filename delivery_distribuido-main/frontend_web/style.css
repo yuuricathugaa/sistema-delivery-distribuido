@@ -1,0 +1,159 @@
+:root {
+    --bg-color: #F3EFE0;      /* Bege do fundo */
+    --card-color: #fff;       /* Fundo do card */
+    --primary-red: #D6001C;   /* Vermelho dos botões */
+    --text-dark: #4A2C2A;     /* Marrom escuro do texto */
+    --header-bg: #5C191F;     /* Cor de vinho do header */
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #222; /* Fundo escuro fora do app */
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Simula o frame do celular */
+.app-container {
+    width: 375px;
+    height: 100%;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Header */
+header {
+    background-color: var(--header-bg);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-icons i {
+    font-size: 24px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* Telas e Navegação */
+.screen {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden { display: none !important; }
+.active { display: flex !important; }
+
+/* Títulos */
+h2, h3 { margin-top: 0; color: var(--header-bg); }
+
+/* Grid de Produtos (Catálogo) */
+.products-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.product-card {
+    background-color: var(--card-color);
+    border-radius: 100px; /* Borda bem arredondada estilo o design */
+    padding: 15px 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.product-card:hover { transform: scale(1.05); }
+
+.product-img {
+    width: 100px;
+    height: 100px;
+    background-color: #ddd; /* Placeholder */
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    
+    /* Propriedades para ajustar a foto */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Carrinho */
+.cart-item {
+    background-color: #FAEBD7;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 2px solid #ccc;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Pagamento */
+.pix-box {
+    background-color: #e0e0e0;
+    padding: 20px;
+    word-break: break-all;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-family: monospace;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.instruction {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+/* Botões */
+.btn-primary {
+    background-color: var(--primary-red);
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--primary-red);
+    color: var(--primary-red);
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+}
